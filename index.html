@@ -3,243 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supraja Srikanth - Portfolio</title>
+    <title>Supraja Srikanth | Software Engineer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #1e293b 0%, #581c87 50%, #1e293b 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #4c1d95 50%, #0f172a 100%); background-attachment: fixed; }
+        
         .section { display: none; }
-        .section.active { display: block; animation: fadeIn 0.5s; }
+        .section.active { display: block; animation: fadeIn 0.6s ease-out; }
+        
         .nav-btn.active { color: #c084fc; border-bottom: 2px solid #c084fc; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        /* Style for the profile image glow */
-        .profile-glow { box-shadow: 0 0 20px rgba(192, 132, 252, 0.4); }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(192, 132, 252, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(192, 132, 252, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .profile-glow {
+            box-shadow: 0 0 40px rgba(192, 132, 252, 0.3);
+            border: 4px solid rgba(192, 132, 252, 0.5);
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen text-white">
-    <header class="container mx-auto px-6 py-20 max-w-4xl">
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-10">
-            <div class="flex-shrink-0">
-                <img src="supraja.png" alt="Supraja Srikanth" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-purple-500 profile-glow">
+
+    <header class="container mx-auto px-6 py-16 md:py-24 max-w-6xl">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-5xl md:text-8xl font-bold mb-4 tracking-tight">Supraja Srikanth</h1>
+                <p class="text-2xl md:text-3xl text-purple-300 mb-6 font-light italic">Full-Stack Software Engineer & AI Enthusiast</p>
+                <p class="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+                    Master's student at the <strong>University of Cincinnati</strong>. Specializing in Distributed Systems, AI/ML, and high-scale backend architectures. Formerly at <strong>ThoughtWorks</strong> and <strong>Amazon</strong>.
+                </p>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                    <a href="mailto:suprajasrikanth872@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-xl font-bold transition flex items-center gap-2">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/supraja777" target="_blank" class="bg-slate-800 hover:bg-slate-700 px-8 py-4 rounded-xl font-bold transition flex items-center gap-2">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/suprajasrikanth/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-bold transition flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
             </div>
-            
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">Supraja Srikanth</h1>
-                <p class="text-2xl text-purple-200 mb-4">Full-Stack Software Engineer & AI Enthusiast</p>
-                <p class="text-lg text-slate-300">Master's student at University of Cincinnati, specializing in distributed systems, AI/ML, and scalable backend architecture.</p>
+
+            <div class="relative group">
+                <img src="supraja.png" alt="Supraja Srikanth" 
+                     class="w-64 h-64 md:w-96 md:h-96 rounded-3xl object-cover profile-glow transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-purple-500 rounded-3xl opacity-20"></div>
             </div>
         </div>
-        
-        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-            <a href="mailto:suprajasrikanth872@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition">Email Me</a>
-            <a href="https://github.com/supraja777" target="_blank" class="bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-lg transition">GitHub</a>
-            <a href="https://www.linkedin.com/in/suprajasrikanth/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition">LinkedIn</a>
-        </div>
-        <p class="text-slate-300 text-center md:text-left">Phone: +1 (513) 372-5745</p>
     </header>
 
-    <nav class="sticky top-0 bg-slate-900 bg-opacity-80 backdrop-blur border-b border-purple-500 border-opacity-20 z-50">
-        <div class="container mx-auto px-6 flex justify-center md:justify-start gap-1">
-            <button onclick="showSection('about')" class="nav-btn active px-6 py-4 text-slate-400 hover:text-white transition">About</button>
-            <button onclick="showSection('experience')" class="nav-btn px-6 py-4 text-slate-400 hover:text-white transition">Experience</button>
-            <button onclick="showSection('projects')" class="nav-btn px-6 py-4 text-slate-400 hover:text-white transition">Projects</button>
-            <button onclick="showSection('skills')" class="nav-btn px-6 py-4 text-slate-400 hover:text-white transition">Skills</button>
+    <nav class="sticky top-0 bg-slate-900/90 backdrop-blur-lg border-b border-purple-500/20 z-50">
+        <div class="container mx-auto px-6 flex justify-center md:justify-start overflow-x-auto whitespace-nowrap">
+            <button onclick="showSection('about')" class="nav-btn active px-6 py-5 font-bold text-slate-400 hover:text-white transition">Education</button>
+            <button onclick="showSection('experience')" class="nav-btn px-6 py-5 font-bold text-slate-400 hover:text-white transition">Experience</button>
+            <button onclick="showSection('projects')" class="nav-btn px-6 py-5 font-bold text-slate-400 hover:text-white transition">Projects</button>
+            <button onclick="showSection('skills')" class="nav-btn px-6 py-5 font-bold text-slate-400 hover:text-white transition">Skills</button>
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-12">
-        <section id="about" class="section active max-w-4xl">
-            <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20">
-                <h2 class="text-3xl font-bold mb-6">Education</h2>
-                <div class="space-y-6">
-                    <div class="border-l-4 border-purple-500 pl-6">
-                        <h3 class="text-xl font-semibold">Master's in Computer Science</h3>
-                        <p class="text-purple-300">University of Cincinnati</p>
-                        <p class="text-slate-400">Aug 2025 - Present</p>
-                        <p class="text-slate-300 mt-2">Coursework: AI, Machine Learning, Data Structures</p>
+    <main class="container mx-auto px-6 py-16">
+
+        <section id="about" class="section active max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-10 flex items-center gap-4">Education</h2>
+            <div class="space-y-8">
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-l-purple-500">
+                    <div class="flex flex-wrap justify-between items-start mb-2">
+                        <h3 class="text-2xl font-bold">Master's in Computer Science</h3>
+                        <span class="text-purple-300">2025 - Present</span>
                     </div>
-                    <div class="border-l-4 border-purple-500 pl-6">
-                        <h3 class="text-xl font-semibold">Bachelor's in CS & Business Systems</h3>
-                        <p class="text-purple-300">VNR VJIET, Hyderabad</p>
-                        <p class="text-slate-400">Aug 2019 - Jun 2023 | CGPA: 3.4</p>
-                        <p class="text-slate-300 mt-2">Coursework: Deep Learning, Data Mining, Distributed Systems</p>
+                    <p class="text-xl text-slate-200">University of Cincinnati</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-l-purple-500">
+                    <div class="flex flex-wrap justify-between items-start mb-2">
+                        <h3 class="text-2xl font-bold">Bachelor's in CS & Business Systems</h3>
+                        <span class="text-purple-300">2019 - 2023</span>
                     </div>
+                    <p class="text-xl text-slate-200">VNR VJIET | CGPA: 3.4</p>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section max-w-5xl">
-            <h2 class="text-3xl font-bold mb-8">Work Experience</h2>
-            <div class="space-y-6">
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex flex-wrap justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold">Application Developer</h3>
-                            <p class="text-purple-300">ThoughtWorks</p>
-                        </div>
-                        <div class="text-right text-slate-400">
-                            <p>Jan 2024 - Jul 2025</p>
-                            <p>Hyderabad</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-300">
-                        <li>▹ Engineered bill notifications using Spring Boot, boosting customer experience by 30%</li>
-                        <li>▹ Architected recurring mandate protocol, reducing payment failures by 1.5%</li>
-                        <li>▹ Decreased payment latency by 75ms through API optimization</li>
-                        <li>▹ Implemented Redis Pub/Sub, increasing concurrent processing by 25%</li>
+        <section id="experience" class="section max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12">Experience</h2>
+            <div class="space-y-8">
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold">Application Developer @ ThoughtWorks</h3>
+                    <p class="text-purple-400 mb-4">Jan 2024 - Jul 2025</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2">
+                        <li>Engineered bill notifications using Spring Boot, boosting CX by 30%.</li>
+                        <li>Architected recurring mandate protocols reducing failure rates by 1.5%.</li>
+                        <li>Optimized BBPS APIs decreasing latency by 75ms.</li>
                     </ul>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex flex-wrap justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold">Software Engineer</h3>
-                            <p class="text-purple-300">KAS Commerce</p>
-                        </div>
-                        <div class="text-right text-slate-400">
-                            <p>Oct 2023 - Jan 2024</p>
-                            <p>Mumbai</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-300">
-                        <li>▹ Optimized Stripe API response time by 150ms</li>
-                        <li>▹ Implemented Amazon OAuth, reducing verification time by 40%</li>
-                        <li>▹ Built BI dashboards with React, increasing usage by 30%</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex flex-wrap justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold">Software Engineering Intern</h3>
-                            <p class="text-purple-300">Amazon</p>
-                        </div>
-                        <div class="text-right text-slate-400">
-                            <p>Jan 2023 - Jun 2023</p>
-                            <p>Hyderabad</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-300">
-                        <li>▹ Designed shadow testing with Java, Spring Boot, AWS (8% code coverage boost)</li>
-                        <li>▹ Elevated test coverage by 15% using JUnit, Mockito, EasyMock</li>
-                        <li>▹ Automated approval workflow for pipeline deployments</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex flex-wrap justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold">Software Engineering Intern</h3>
-                            <p class="text-purple-300">Giottus Technologies</p>
-                        </div>
-                        <div class="text-right text-slate-400">
-                            <p>Jun 2022 - Jul 2022</p>
-                            <p>Chennai</p>
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-300">
-                        <li>▹ Integrated crypto order book API, decreasing latency by 15%</li>
-                        <li>▹ Cleaned 75 GB of transaction data, reducing errors by 7%</li>
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold">Software Engineering Intern @ Amazon</h3>
+                    <p class="text-purple-400 mb-4">Jan 2023 - Jun 2023</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2">
+                        <li>Designed shadow testing using Java & AWS, boosting coverage by 8%.</li>
+                        <li>Automated approval workflows for high-scale pipeline deployments.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section max-w-5xl">
-            <h2 class="text-3xl font-bold mb-8">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex justify-between mb-4">
-                        <h3 class="text-2xl font-bold">GPT-From-Scratch</h3>
-                        <a href="https://github.com/supraja777/GPT-From-Scratch" target="_blank" class="text-purple-400 hover:text-purple-300">View →</a>
-                    </div>
-                    <p class="text-slate-300 mb-4">Built a Generative Pre-trained Transformer from scratch with PyTorch, including tokenization, attention mechanisms, and training pipelines.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">Python</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">PyTorch</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">NLP</span>
-                    </div>
+        <section id="projects" class="section max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-10">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">AI-Code-Polisher</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Refines and optimizes code using LLMs and performance best practices.</p>
+                    <a href="https://github.com/supraja777/ai-code-polisher" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition">
-                    <div class="flex justify-between mb-4">
-                        <h3 class="text-2xl font-bold">All-RAG-Techniques</h3>
-                        <a href="https://github.com/supraja777/All-RAG-Techniques" target="_blank" class="text-purple-400 hover:text-purple-300">View →</a>
-                    </div>
-                    <p class="text-slate-300 mb-4">Engineered RAG pipelines with dense embeddings, vector search, semantic chunking, and reranking to improve LLM retrieval accuracy.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">RAG</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">LLM</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">Python</span>
-                    </div>
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">QLora Fine-Tuning</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Efficiently fine-tuning LLMs on consumer hardware using Quantized Low-Rank Adaptation.</p>
+                    <a href="https://github.com/supraja777/QLora-Fine-Tuning" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20 hover:border-opacity-40 transition md:col-span-2">
-                    <div class="flex justify-between mb-4">
-                        <h3 class="text-2xl font-bold">Dual-Agent-Debate</h3>
-                        <a href="https://github.com/supraja777/Dual-Agent-Debate-Pattern" target="_blank" class="text-purple-400 hover:text-purple-300">View →</a>
-                    </div>
-                    <p class="text-slate-300 mb-4">Built dual-agent LLM debate system with orchestration, state workflows, and multi-round reasoning for structured argument generation.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">LLM</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">AI Agents</span>
-                        <span class="px-3 py-1 bg-purple-900 bg-opacity-30 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">Python</span>
-                    </div>
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">AI-Agents Portfolio</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Implementations of autonomous agent coordination for complex tasks.</p>
+                    <a href="https://github.com/supraja777/ai-agents-portfolio" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
+                </div>
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">GPT-From-Scratch</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Built a Generative Pre-trained Transformer including self-attention and training pipelines.</p>
+                    <a href="https://github.com/supraja777/GPT-From-Scratch" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
+                </div>
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">All-RAG-Techniques</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Advanced Retrieval-Augmented Generation using semantic chunking and reranking.</p>
+                    <a href="https://github.com/supraja777/All-RAG-Techniques" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
+                </div>
+                <div class="glass-card p-8 rounded-3xl flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Dual-Agent-Debate</h3>
+                    <p class="text-slate-300 mb-6 flex-grow">Multi-agent system using reasoning for structured argument generation.</p>
+                    <a href="https://github.com/supraja777/Dual-Agent-Debate-Pattern" target="_blank" class="text-purple-400 font-bold">GitHub →</a>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="section max-w-5xl">
-            <h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Languages</h3>
+        <section id="skills" class="section max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center italic">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-terminal mr-2"></i> Languages</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Python</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Java</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">JavaScript</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">TypeScript</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Go</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">C#</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">C++</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">R</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Python</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Java</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Go</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">C++</span>
                     </div>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Frontend</h3>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-server mr-2"></i> Backend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">React.js</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Redux</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Next.js</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">HTML/CSS</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">GraphQL</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">WebSockets</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Spring Boot</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Microservices</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Django</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">REST APIs</span>
                     </div>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Backend</h3>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-desktop mr-2"></i> Frontend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Spring Boot</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Node.js</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Express.js</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Django</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">.NET</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Microservices</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">REST APIs</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">React.js</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Next.js</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Redux</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">GraphQL</span>
                     </div>
                 </div>
-                <div class="bg-slate-800 bg-opacity-50 rounded-2xl p-8 border border-purple-500 border-opacity-20">
-                    <h3 class="text-xl font-bold text-purple-400 mb-4">Databases</h3>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-cloud mr-2"></i> Cloud & DevOps</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">MySQL</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">PostgreSQL</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">MongoDB</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Redis</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">DynamoDB</span>
-                        <span class="px-4 py-2 bg-slate-700 bg-opacity-50 rounded-lg text-sm border border-slate-600">Snowflake</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">AWS</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Docker</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Jenkins</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">CI/CD</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Git</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-database mr-2"></i> Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Redis</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">DynamoDB</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Snowflake</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">MongoDB</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-purple-400 font-bold mb-4 uppercase text-sm tracking-widest"><i class="fas fa-brain mr-2"></i> AI & ML</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">PyTorch</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">LangChain</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">RAG</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">LLMs</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-sm border border-slate-700">Scikit-learn</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="container mx-auto px-6 py-12 text-center text-slate-400 border-t border-purple-500 border-opacity-20">
-        <p>© 2026 Supraja Srikanth.</p>
+    <footer class="container mx-auto px-6 py-12 text-center text-slate-500 border-t border-purple-500/10">
+        <p>© 2026 Supraja Srikanth | Software Engineer</p>
     </footer>
 
     <script>
@@ -247,7 +237,8 @@
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            event.target.classList.add('active');
+            event.currentTarget.classList.add('active');
+            window.scrollTo({ top: document.querySelector('nav').offsetTop - 20, behavior: 'smooth' });
         }
     </script>
 </body>
