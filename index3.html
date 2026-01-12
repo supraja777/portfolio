@@ -12,34 +12,24 @@
         .section.active { display: block; animation: fadeIn 0.5s; }
         .nav-btn.active { color: #c084fc; border-bottom: 2px solid #c084fc; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        /* Style for the profile image glow */
-        .profile-glow { box-shadow: 0 0 20px rgba(192, 132, 252, 0.4); }
     </style>
 </head>
 <body class="gradient-bg min-h-screen text-white">
     <header class="container mx-auto px-6 py-20 max-w-4xl">
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-10">
-            <div class="flex-shrink-0">
-                <img src="supraja.png" alt="Supraja Srikanth" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-purple-500 profile-glow">
-            </div>
-            
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">Supraja Srikanth</h1>
-                <p class="text-2xl text-purple-200 mb-4">Full-Stack Software Engineer & AI Enthusiast</p>
-                <p class="text-lg text-slate-300">Master's student at University of Cincinnati, specializing in distributed systems, AI/ML, and scalable backend architecture.</p>
-            </div>
-        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">Supraja Srikanth</h1>
+        <p class="text-2xl text-purple-200 mb-6">Full-Stack Software Engineer & AI Enthusiast</p>
+        <p class="text-lg text-slate-300 mb-8">Master's student at University of Cincinnati, specializing in distributed systems, AI/ML, and scalable backend architecture.</p>
         
-        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+        <div class="flex flex-wrap gap-4 mb-8">
             <a href="mailto:suprajasrikanth872@gmail.com" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition">Email Me</a>
             <a href="https://github.com/supraja777" target="_blank" class="bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-lg transition">GitHub</a>
             <a href="https://www.linkedin.com/in/suprajasrikanth/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition">LinkedIn</a>
         </div>
-        <p class="text-slate-300 text-center md:text-left">Phone: +1 (513) 372-5745</p>
+        <p class="text-slate-300">Phone: +1 (513) 372-5745</p>
     </header>
 
     <nav class="sticky top-0 bg-slate-900 bg-opacity-80 backdrop-blur border-b border-purple-500 border-opacity-20 z-50">
-        <div class="container mx-auto px-6 flex justify-center md:justify-start gap-1">
+        <div class="container mx-auto px-6 flex gap-1">
             <button onclick="showSection('about')" class="nav-btn active px-6 py-4 text-slate-400 hover:text-white transition">About</button>
             <button onclick="showSection('experience')" class="nav-btn px-6 py-4 text-slate-400 hover:text-white transition">Experience</button>
             <button onclick="showSection('projects')" class="nav-btn px-6 py-4 text-slate-400 hover:text-white transition">Projects</button>
