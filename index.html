@@ -1,151 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supraja Srikanth | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav>
-        <div class="logo">SS</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronDown, Code, Briefcase, GraduationCap, Wrench } from 'lucide-react';
 
-    <header id="about">
-        <div class="hero">
-            <h1>Supraja Srikanth</h1>
-            <p class="subtitle">Software Engineer & MSCS Student</p>
-            <p class="summary">
-                Specializing in Distributed Systems, Cloud Infrastructure, and Generative AI. 
-                Proven track record of optimizing high-demand workflows and building end-to-end transformer models.
-            </p>
+export default function Portfolio() {
+  const [activeSection, setActiveSection] = useState('about');
+
+  const experiences = [
+    {
+      title: "Application Developer",
+      company: "ThoughtWorks",
+      location: "Hyderabad",
+      period: "Jan 2024 - Jul 2025",
+      highlights: [
+        "Engineered bill notifications and alerts using Spring Boot and Java, boosting customer experience by 30%",
+        "Architected recurring mandate protocol for autopay, reducing payment failure rates by 1.5%",
+        "Decreased payment processing latency by 75ms through BBPS API optimization",
+        "Implemented Redis Pub/Sub architecture, increasing concurrent processing by 25%"
+      ]
+    },
+    {
+      title: "Software Engineer",
+      company: "KAS Commerce",
+      location: "Mumbai",
+      period: "Oct 2023 - Jan 2024",
+      highlights: [
+        "Optimized API response time for Stripe transactions by 150ms",
+        "Implemented Amazon OAuth, reducing manual verification time by 40%",
+        "Built interactive BI dashboards with React and PostgreSQL, increasing usage by 30%"
+      ]
+    },
+    {
+      title: "Software Engineering Intern",
+      company: "Amazon",
+      location: "Hyderabad",
+      period: "Jan 2023 - Jun 2023",
+      highlights: [
+        "Designed shadow testing environment with Java, Spring Boot, and AWS, augmenting code coverage by 8%",
+        "Elevated test coverage by 15% using JUnit, Mockito, and EasyMock",
+        "Initiated automated approval workflow for Brazil package violations"
+      ]
+    },
+    {
+      title: "Software Engineering Intern",
+      company: "Giottus Technologies",
+      location: "Chennai",
+      period: "Jun 2022 - Jul 2022",
+      highlights: [
+        "Integrated cryptocurrency order book API, decreasing latency by 15%",
+        "Cleaned and preprocessed 75 GB of transaction data, reducing errors by 7%"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      name: "GPT-From-Scratch",
+      description: "Implemented a Generative Pre-trained Transformer from scratch using Python and PyTorch, including BPE tokenization, multi-head self-attention, positional embeddings, and transformer blocks.",
+      github: "https://github.com/supraja777/GPT-From-Scratch",
+      tags: ["Python", "PyTorch", "Transformers", "NLP"]
+    },
+    {
+      name: "All-RAG-Techniques",
+      description: "Engineered scalable Retrieval-Augmented Generation pipelines implementing dense embeddings, vector search, semantic chunking, query rewriting, and reranking to improve LLM retrieval accuracy.",
+      github: "https://github.com/supraja777/All-RAG-Techniques",
+      tags: ["RAG", "Vector Search", "LLM", "Python"]
+    },
+    {
+      name: "Dual-Agent-Debate",
+      description: "Built a dual-agent LLM debate system leveraging agent orchestration, state-driven workflows, prompt engineering, and multi-round reasoning for structured argument generation.",
+      github: "https://github.com/supraja777/Dual-Agent-Debate-Pattern",
+      tags: ["LLM", "Agent Systems", "Python", "AI"]
+    }
+  ];
+
+  const skills = {
+    "Languages": ["Python", "Java", "JavaScript", "TypeScript", "Go", "C#", "C++", "R"],
+    "Frontend": ["React.js", "Redux", "Next.js", "HTML/CSS", "GraphQL", "WebSockets"],
+    "Backend": ["Spring Boot", "Node.js", "Express.js", "Django", ".NET", "Microservices", "REST APIs"],
+    "Databases": ["MySQL", "PostgreSQL", "MongoDB", "Redis", "DynamoDB", "Snowflake"]
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Hero Section */}
+      <header className="container mx-auto px-6 py-20">
+        <div className="max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+            Supraja Srikanth
+          </h1>
+          <p className="text-2xl md:text-3xl text-purple-200 mb-6">
+            Full-Stack Software Engineer & AI Enthusiast
+          </p>
+          <p className="text-lg text-slate-300 mb-8 max-w-2xl">
+            Master's student in Computer Science at University of Cincinnati, specializing in distributed systems, AI/ML, and scalable backend architecture.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 mb-8">
+            <a href="mailto:suprajasrikanth872@gmail.com" className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition">
+              <Mail size={20} />
+              Email Me
+            </a>
+            <a href="https://github.com/supraja777" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg transition">
+              <Github size={20} />
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/suprajasrikanth/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
+              <Linkedin size={20} />
+              LinkedIn
+            </a>
+          </div>
+
+          <div className="flex items-center gap-6 text-slate-300">
+            <div className="flex items-center gap-2">
+              <Phone size={18} />
+              <span>+1 (513) 372-5745</span>
+            </div>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="education-container">
-            <div class="edu-card">
-                <h3>Master's in Computer Science</h3>
-                <p class="institution">University of Cincinnati | Cincinnati, USA</p>
-                <span class="date">Aug 2025 - Present</span>
-                <p class="coursework"><strong>Focus:</strong> Artificial Intelligence, Machine Learning, Data Structures and Algorithms.</p>
-            </div>
-            <div class="edu-card">
-                <h3>Bachelor's in Computer Science and Business Systems</h3>
-                <p class="institution">VNR VJIET | Hyderabad, India</p>
-                <span class="date">Aug 2019 - Jun 2023 (CGPA: 3.4)</span>
-                <p class="coursework"><strong>Focus:</strong> Reinforcement Learning, Deep Learning, Distributed Systems, and SDLC.</p>
-            </div>
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-slate-900/80 backdrop-blur-lg border-b border-purple-500/20 z-50">
+        <div className="container mx-auto px-6">
+          <div className="flex gap-1">
+            {['about', 'experience', 'projects', 'skills'].map((section) => (
+              <button
+                key={section}
+                onClick={() => setActiveSection(section)}
+                className={`px-6 py-4 font-medium capitalize transition ${
+                  activeSection === section
+                    ? 'text-purple-400 border-b-2 border-purple-400'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {section}
+              </button>
+            ))}
+          </div>
         </div>
-    </section>
+      </nav>
 
-    <section id="experience">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="timeline">
-            <div class="job-card">
-                <h3>Application Developer | ThoughtWorks</h3>
-                <span class="date">Jan 2024 - Jul 2025</span>
-                <ul>
-                    <li>Reduced payment processing latency by 75ms by optimizing BBPS APIs.</li>
-                    <li>Boosted customer experience by 30% through engineered bill notifications using Spring Boot.</li>
-                    <li>Implemented Redis Pub/Sub, increasing concurrent processing by at least 25%.</li>
-                </ul>
-            </div>
-            <div class="job-card">
-                <h3>Software Engineer | KAS Commerce</h3>
-                <span class="date">Oct 2023 - Jan 2024</span>
-                <ul>
-                    <li>Optimized API response time for Stripe transactions by 150ms.</li>
-                    <li>Built interactive BI dashboards using React and PostgreSQL, increasing usage by 30%.</li>
-                </ul>
-            </div>
-            <div class="job-card">
-                <h3>Software Engineering Intern | Amazon</h3>
-                <span class="date">Jan 2023 - Jun 2023</span>
-                <ul>
-                    <li>Designed shadow testing environments, augmenting code coverage by 8%.</li>
-                    <li>Refactored legacy code, reducing technical debt by 12%.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Technical Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>GPT-From-Scratch</h3>
-                <p>Implemented a Generative Pre-trained Transformer using Python and PyTorch, featuring multi-head self-attention and BPE tokenization.</p>
-                <div class="project-skills">
-                    <span>Python</span><span>PyTorch</span><span>NLP</span><span>Transformers</span>
+      {/* Content Sections */}
+      <main className="container mx-auto px-6 py-12">
+        {activeSection === 'about' && (
+          <section className="max-w-4xl">
+            <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-purple-500/20">
+              <div className="flex items-center gap-3 mb-6">
+                <GraduationCap className="text-purple-400" size={32} />
+                <h2 className="text-3xl font-bold text-white">Education</h2>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="border-l-4 border-purple-500 pl-6">
+                  <h3 className="text-xl font-semibold text-white">Master's in Computer Science</h3>
+                  <p className="text-purple-300">University of Cincinnati</p>
+                  <p className="text-slate-400">Aug 2025 - Present | Cincinnati, USA</p>
+                  <p className="text-slate-300 mt-2">Coursework: Artificial Intelligence, Machine Learning, Data Structures and Algorithms</p>
                 </div>
-                <a href="https://github.com/supraja777/GPT-From-Scratch" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
-            </div>
-
-            <div class="project-card">
-                <h3>All-RAG-Techniques</h3>
-                <p>Engineered scalable RAG pipelines with dense embeddings, vector search, and contextual compression for LLM accuracy.</p>
-                <div class="project-skills">
-                    <span>Vector DB</span><span>Semantic Search</span><span>LLMs</span>
+                
+                <div className="border-l-4 border-purple-500 pl-6">
+                  <h3 className="text-xl font-semibold text-white">Bachelor's in Computer Science and Business Systems</h3>
+                  <p className="text-purple-300">VNR VJIET, Hyderabad, India</p>
+                  <p className="text-slate-400">Aug 2019 - Jun 2023 | CGPA: 3.4</p>
+                  <p className="text-slate-300 mt-2">Coursework: Reinforcement Learning, Deep Learning, Data Mining, Software Development Lifecycle, Distributed Systems</p>
                 </div>
-                <a href="https://github.com/supraja777/All-RAG-Techniques" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+              </div>
             </div>
+          </section>
+        )}
 
-            <div class="project-card">
-                <h3>Dual-Agent-Debate</h3>
-                <p>Built a dual-agent system using agent orchestration and state-driven workflows to enable structured argument generation.</p>
-                <div class="project-skills">
-                    <span>Agentic AI</span><span>Python</span><span>Prompt Engineering</span>
+        {activeSection === 'experience' && (
+          <section className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-8">
+              <Briefcase className="text-purple-400" size={32} />
+              <h2 className="text-3xl font-bold text-white">Work Experience</h2>
+            </div>
+            
+            <div className="space-y-6">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition">
+                  <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                      <p className="text-purple-300 text-lg">{exp.company}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-slate-400">{exp.period}</p>
+                      <p className="text-slate-500">{exp.location}</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2">
+                    {exp.highlights.map((highlight, i) => (
+                      <li key={i} className="text-slate-300 flex gap-3">
+                        <span className="text-purple-400 mt-1">▹</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <a href="https://github.com/supraja777/Dual-Agent-Debate-Pattern" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+              ))}
             </div>
-        </div>
-    </section>
+          </section>
+        )}
 
-    <section id="skills">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <p>Python, Java, JavaScript, TypeScript, Go, C#, C++, R, Bash</p>
+        {activeSection === 'projects' && (
+          <section className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-8">
+              <Code className="text-purple-400" size={32} />
+              <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
             </div>
-            <div class="skill-category">
-                <h3>Back-End</h3>
-                <p>Spring Boot, Node.js, Django, .NET, Microservices, REST APIs</p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project, idx) => (
+                <div key={idx} className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition group">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition">{project.name}</h3>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
+                      <ExternalLink size={24} />
+                    </a>
+                  </div>
+                  <p className="text-slate-300 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm border border-purple-500/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div class="skill-category">
-                <h3>Front-End</h3>
-                <p>React.js, Redux, Next.js, GraphQL, WebSockets</p>
-            </div>
-            <div class="skill-category">
-                <h3>Databases</h3>
-                <p>PostgreSQL, MySQL, Snowflake, DynamoDB, MongoDB, Redis</p>
-            </div>
-        </div>
-    </section>
+          </section>
+        )}
 
-    <footer id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-details">
-            <p><i class="fas fa-envelope"></i> suprajasrikanth872@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +1 (513)-372-5745</p>
-            <div class="social-icons">
-                <a href="https://github.com/supraja777"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/suprajasrikanth/"><i class="fab fa-linkedin"></i></a>
+        {activeSection === 'skills' && (
+          <section className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-8">
+              <Wrench className="text-purple-400" size={32} />
+              <h2 className="text-3xl font-bold text-white">Technical Skills</h2>
             </div>
-        </div>
-    </footer>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {Object.entries(skills).map(([category, items]) => (
+                <div key={category} className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-purple-500/20">
+                  <h3 className="text-xl font-bold text-purple-400 mb-4">{category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill, i) => (
+                      <span key={i} className="px-4 py-2 bg-slate-700/50 text-slate-200 rounded-lg text-sm border border-slate-600 hover:border-purple-500/50 transition">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
 
-    <script src="script.js"></script>
-</body>
-</html>
+      {/* Footer */}
+      <footer className="container mx-auto px-6 py-12 text-center text-slate-400 border-t border-purple-500/20">
+        <p>© 2026 Supraja Srikanth. Built with React & Tailwind CSS.</p>
+      </footer>
+    </div>
+  );
+}
