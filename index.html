@@ -5,62 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supraja Srikanth | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Supraja Srikanth</h1>
-        <p>Master's in Computer Science @ University of Cincinnati [cite: 4]</p>
-        <div class="header-links">
-            <a href="https://github.com/supraja777">GitHub </a>
-            <a href="mailto:suprajasrikanth872@gmail.com">Email [cite: 1]</a>
+    <nav>
+        <div class="logo">SS</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <div class="hero">
+            <h1>Supraja Srikanth</h1>
+            <p class="subtitle">Software Engineer & MSCS Student</p>
+            <p class="summary">
+                Specializing in Distributed Systems, Cloud Infrastructure, and Generative AI. 
+                Proven track record of optimizing high-demand workflows and building end-to-end transformer models.
+            </p>
         </div>
     </header>
 
-    <section id="featured-projects">
-        <h2>Featured AI & Engineering Projects</h2>
-        
-        <div class="project-container">
-            <article class="project-card featured">
-                <div class="project-content">
-                    <span class="category">Generative AI</span>
-                    <h3>GPT From Scratch</h3>
-                    <p>Implemented an autoregressive language model using PyTorch. This includes multi-head self-attention, BPE tokenization, and transformer blocks[cite: 39].</p>
-                    <div class="tags">
-                        <span>Python</span><span>PyTorch</span><span>NLP</span>
-                    </div>
-                    <a href="https://github.com/supraja777/GPT-From-Scratch" class="btn">View Repo [cite: 38]</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-content">
-                    <span class="category">LLM Orchestration</span>
-                    <h3>Dual-Agent Debate</h3>
-                    <p>Built a system leveraging agent orchestration and multi-round reasoning to enable structured argument generation and refinement[cite: 43].</p>
-                    <div class="tags">
-                        <span>Agentic AI</span><span>Prompt Engineering</span>
-                    </div>
-                    <a href="https://github.com/supraja777/Dual-Agent-Debate-Pattern" class="btn">View Repo [cite: 42]</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-content">
-                    <span class="category">Retrieval Systems</span>
-                    <h3>All-RAG-Techniques</h3>
-                    <p>Engineered scalable RAG pipelines implementing semantic chunking, vector search, and reranking to improve retrieval accuracy[cite: 41].</p>
-                    <div class="tags">
-                        <span>Vector Search</span><span>Contextual Compression</span>
-                    </div>
-                    <a href="https://github.com/supraja777/All-RAG-Techniques" class="btn">View Repo [cite: 40]</a>
-                </div>
-            </article>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-container">
+            <div class="edu-card">
+                <h3>Master's in Computer Science</h3>
+                <p class="institution">University of Cincinnati | Cincinnati, USA</p>
+                <span class="date">Aug 2025 - Present</span>
+                <p class="coursework"><strong>Focus:</strong> Artificial Intelligence, Machine Learning, Data Structures and Algorithms.</p>
+            </div>
+            <div class="edu-card">
+                <h3>Bachelor's in Computer Science and Business Systems</h3>
+                <p class="institution">VNR VJIET | Hyderabad, India</p>
+                <span class="date">Aug 2019 - Jun 2023 (CGPA: 3.4)</span>
+                <p class="coursework"><strong>Focus:</strong> Reinforcement Learning, Deep Learning, Distributed Systems, and SDLC.</p>
+            </div>
         </div>
     </section>
 
-    <section id="experience-summary">
-        <h2>Professional Impact</h2>
-        <p>Previously at <strong>ThoughtWorks</strong> and <strong>Amazon</strong> [cite: 12, 25], where I optimized system latency by up to 75ms and automated complex CI/CD workflows[cite: 16, 31].</p>
+    <section id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+            <div class="job-card">
+                <h3>Application Developer | ThoughtWorks</h3>
+                <span class="date">Jan 2024 - Jul 2025</span>
+                <ul>
+                    <li>Reduced payment processing latency by 75ms by optimizing BBPS APIs.</li>
+                    <li>Boosted customer experience by 30% through engineered bill notifications using Spring Boot.</li>
+                    <li>Implemented Redis Pub/Sub, increasing concurrent processing by at least 25%.</li>
+                </ul>
+            </div>
+            <div class="job-card">
+                <h3>Software Engineer | KAS Commerce</h3>
+                <span class="date">Oct 2023 - Jan 2024</span>
+                <ul>
+                    <li>Optimized API response time for Stripe transactions by 150ms.</li>
+                    <li>Built interactive BI dashboards using React and PostgreSQL, increasing usage by 30%.</li>
+                </ul>
+            </div>
+            <div class="job-card">
+                <h3>Software Engineering Intern | Amazon</h3>
+                <span class="date">Jan 2023 - Jun 2023</span>
+                <ul>
+                    <li>Designed shadow testing environments, augmenting code coverage by 8%.</li>
+                    <li>Refactored legacy code, reducing technical debt by 12%.</li>
+                </ul>
+            </div>
+        </div>
     </section>
+
+    <section id="projects">
+        <h2 class="section-title">Technical Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>GPT-From-Scratch</h3>
+                <p>Implemented a Generative Pre-trained Transformer using Python and PyTorch, featuring multi-head self-attention and BPE tokenization.</p>
+                <div class="project-skills">
+                    <span>Python</span><span>PyTorch</span><span>NLP</span><span>Transformers</span>
+                </div>
+                <a href="https://github.com/supraja777/GPT-From-Scratch" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="project-card">
+                <h3>All-RAG-Techniques</h3>
+                <p>Engineered scalable RAG pipelines with dense embeddings, vector search, and contextual compression for LLM accuracy.</p>
+                <div class="project-skills">
+                    <span>Vector DB</span><span>Semantic Search</span><span>LLMs</span>
+                </div>
+                <a href="https://github.com/supraja777/All-RAG-Techniques" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="project-card">
+                <h3>Dual-Agent-Debate</h3>
+                <p>Built a dual-agent system using agent orchestration and state-driven workflows to enable structured argument generation.</p>
+                <div class="project-skills">
+                    <span>Agentic AI</span><span>Python</span><span>Prompt Engineering</span>
+                </div>
+                <a href="https://github.com/supraja777/Dual-Agent-Debate-Pattern" class="project-link">View on GitHub <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <p>Python, Java, JavaScript, TypeScript, Go, C#, C++, R, Bash</p>
+            </div>
+            <div class="skill-category">
+                <h3>Back-End</h3>
+                <p>Spring Boot, Node.js, Django, .NET, Microservices, REST APIs</p>
+            </div>
+            <div class="skill-category">
+                <h3>Front-End</h3>
+                <p>React.js, Redux, Next.js, GraphQL, WebSockets</p>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <p>PostgreSQL, MySQL, Snowflake, DynamoDB, MongoDB, Redis</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> suprajasrikanth872@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +1 (513)-372-5745</p>
+            <div class="social-icons">
+                <a href="https://github.com/supraja777"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/suprajasrikanth/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
